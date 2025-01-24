@@ -1,0 +1,10 @@
+<div class="search-container">
+                <input type="text" placeholder="SEARCH" class="search-input">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+
+
+            
