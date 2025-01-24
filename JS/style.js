@@ -1,13 +1,30 @@
+const nav = document.querySelector(".nav"),
+    searchIcon = document.querySelector("#searchIcon"),
+    navOpenBtn = document.querySelector(".navOpenBtn"),
+    navCloseBtn = document.querySelector(".navCloseBtn"),
+    topNav = document.querySelector(".top-nav");
 
-function toggleMenu() {
-    const links = document.querySelector('.links');
-    
-    // Toggle 'active' class to show/hide menu
-    links.classList.toggle('active');
-}
+searchIcon.addEventListener("click", () => {
+    topNav.classList.toggle("openSearch");
+    nav.classList.remove("openNav");
+    if (topNav.classList.contains("openSearch")) {
+        return searchIcon.classList.replace("uil-search", "uil-times");
+    }
+    searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navOpenBtn.addEventListener("click", () => {
+    nav.classList.add("openNav");
+    topNav.classList.remove("openSearch");
+    searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navCloseBtn.addEventListener("click", () => {
+    nav.classList.remove("openNav");
+});
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -43,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const today = new Date();
                 const isDisabled = date < today;
                 const className = isDisabled ? 'calendar-day disabled' : 'calendar-day';
-                
+
                 calendarHTML += `<div class="${className}" data-date="${date.toISOString()}">${day}</div>`;
             }
 
@@ -131,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form submission handling
-    document.getElementById('search-form').addEventListener('submit', function(e) {
+    document.getElementById('search-form').addEventListener('submit', function (e) {
         e.preventDefault();
         console.log('Search submitted');
     });

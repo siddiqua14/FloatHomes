@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/CSS/index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 </head>
 
 <body>
@@ -44,25 +44,31 @@
             <span>Float Homes</span>
         </div>
 
-        <div class="links" style="display: inline-flex; align-items: center; gap: 20px;">
-            <a href="#">Accommodation</a>
-            <a href="#">Destinations</a>
+        <div class="top-nav">
+            <a href="#">Categories</a>
+            <a href="#">Archives</a>
             <div class="search">
-                <input type="text" placeholder="SEARCH">
-                <div class="button-src">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
+                <input type="text" placeholder="Search" class="search-input">
+                <i class="uil uil-search search-icon"></i>
             </div>
         </div>
-        <!-- Hamburger Menu Icon -->
-        <div class="hamburger" onclick="toggleMenu()">
-            &#9776; <!-- Unicode for hamburger icon -->
-        </div>
-        <!-- Hidden Menu -->
-        <div class="dropdown-menu">
-            <a href="#">Accommodation</a>
-            <a href="#">Destinations</a>
-        </div>
+        <!-- Mobile Navigation -->
+        
+        <nav class="nav">
+            <div class="mobile-icons">
+                <div class="search-icon-wrapper">
+                    <i class="uil uil-search search-icon" id="searchIcon"></i>
+                </div>
+                <i class="uil uil-bars navOpenBtn"></i>
+            </div>
+            <div class="nav-links">
+                <i class="uil uil-times navCloseBtn"></i>
+                <a href="#">BLOG HOME</a>
+                <a href="#">CATEGORIES</a>
+                <a href="#">ARCHIVES</a>
+            </div>
+        </nav>
+
     </div>
 
     <!-- Header -->
