@@ -1,28 +1,44 @@
-const nav = document.querySelector(".nav"),
-    searchIcon = document.querySelector("#searchIcon"),
-    navOpenBtn = document.querySelector(".navOpenBtn"),
-    navCloseBtn = document.querySelector(".navCloseBtn"),
-    topNav = document.querySelector(".top-nav");
+const nav = document.querySelector(".nav");
+const mobileSearchIcon = document.querySelector("#mobileSearchIcon");
+const mobileSearchInput = document.querySelector(".mobile-search-input");
+const navOpenBtn = document.querySelector(".navOpenBtn");
+const navCloseBtn = document.querySelector(".navCloseBtn");
 
-searchIcon.addEventListener("click", () => {
-    topNav.classList.toggle("openSearch");
+mobileSearchIcon.addEventListener("click", () => {
+    mobileSearchInput.classList.toggle("active");
     nav.classList.remove("openNav");
-    if (topNav.classList.contains("openSearch")) {
-        return searchIcon.classList.replace("uil-search", "uil-times");
-    }
-    searchIcon.classList.replace("uil-times", "uil-search");
 });
 
 navOpenBtn.addEventListener("click", () => {
     nav.classList.add("openNav");
-    topNav.classList.remove("openSearch");
-    searchIcon.classList.replace("uil-times", "uil-search");
+    mobileSearchInput.classList.remove("active");
 });
 
 navCloseBtn.addEventListener("click", () => {
     nav.classList.remove("openNav");
 });
 
+/////sliding 
+document.querySelectorAll('.image-slider').forEach(slider => {
+    const images = slider.querySelector('.slider-images');
+    const dots = slider.querySelectorAll('.dot');
+    let index = 0;
+  
+    function showSlide(i) {
+      index = i < 0 ? dots.length - 1 : i >= dots.length ? 0 : i;
+      images.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+  
+    slider.querySelector('.left').addEventListener('click', () => showSlide(index - 1));
+    slider.querySelector('.right').addEventListener('click', () => showSlide(index + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+  
+    // Auto-slide every 5 seconds
+    setInterval(() => showSlide(index + 1), 5000);
+  });
+  
 
 document.addEventListener('DOMContentLoaded', function () {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
