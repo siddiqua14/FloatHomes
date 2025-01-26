@@ -4,8 +4,16 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
-
-
+:root {
+    --primary-blue: #40B7E1;
+    --dark-bg: #0A2533;
+    --text-gray: #8B98A3;
+}
+body {
+    font-family: Arial, sans-serif;
+   
+    color: white;
+}
 
 /* Navbar */
 .navbar {
@@ -264,9 +272,12 @@
 
 /* Header */
 .header {
+    margin: 20px ;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 8px;
 
     position: relative;
-    background: url(https://via.placeholder.com/1200x600) no-repeat center center / cover;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -274,7 +285,7 @@
 
     text-align: center;
     color: white;
-    margin: 15px;
+    
 }
 
 
@@ -576,6 +587,14 @@
     }
 }
 
+.container {
+    margin: 40px auto;
+    padding: 0 20px;
+    background: #fff;
+    border-radius: 8px;
+
+}
+
 /* General grid layout */
 .property-grid {
     display: grid;
@@ -616,7 +635,7 @@
 }
 
 /* Navigation Arrows */
-.image-slider .nav {
+.navbtn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -629,11 +648,11 @@
     z-index: 2;
 }
 
-.image-slider .nav.left {
+.navbtn.left {
     left: 10px;
 }
 
-.image-slider .nav.right {
+.navbtn.right {
     right: 10px;
 }
 
@@ -661,6 +680,7 @@
 }
 
 /* Property Info */
+
 .property-info {
     padding: 15px;
     font-family: Arial, sans-serif;
@@ -744,4 +764,389 @@
     .property-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.location-header {
+    padding: 20px;
+    background: #F1F8FB;
+    border: 2px solid #E4EDF2;
+    border-radius: 10px;
+}
+
+.location-header h1 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.location-card {
+    background: #0996C2;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.location-card h3 {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.location-card p {
+    font-size: 12px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.learn-more {
+    border: 1px solid white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+
+
+.recent-bookings {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    border-radius: 10px;
+    background: #F1F8FB;
+    border: 2px solid #E4EDF2;
+    padding: 30px;
+}
+
+.booking-section h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.booking-grid a {
+    color: #666;
+    text-decoration: underline;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.footer {
+    width: 100%;
+    background-color: var(--dark-bg);
+    padding: 60px 80px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.brand-section {
+    text-align: center;
+    
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Float Homes Logo */
+.float-homes-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.brand-title {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin: 0;
+}
+
+.brand-description {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+/* Horizontal Divider */
+.divider-line {
+    width: 80%;
+    margin: 20px auto;
+    border: 0;
+    border-top: 1px solid #B3D9EA;
+}
+/* TravelAI Logo */
+.travelai-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.powered-by {
+    font-size: 12px;
+    color: #B3D9EA;
+    margin: 0;
+}
+
+.newsletter-section {
+    max-width: 460px;
+}
+
+.newsletter-section h2 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: white;
+}
+
+.newsletter-form button {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.newsletter-terms {
+    color: var(--text-gray);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-column h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.footer-column a {
+    display: block;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+}
+
+.partner-logos img {
+    height: 24px;
+    opacity: 0.7;
+}
+
+.footer-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.language-currency {
+    display: flex;
+    gap: 12px;
+}
+
+.language-currency select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.agent-hotline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-bottom-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+}
+@media (max-width: 1440px) {
+    .footer {
+        padding: 60px;
+    }
+    
+    .footer-links {
+        gap: 30px;
+    }
+}
+@media (max-width: 1024px) {
+    .location-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .booking-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 991px) {
+    .footer {
+        padding: 40px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    .partner-logos {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .footer-controls {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 24px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-bottom-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .language-currency {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .language-currency select {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .location-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recent-bookings {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+   
 }

@@ -1,20 +1,372 @@
-<div class="links" style="display: inline-flex; align-items: center; gap: 20px;">
-    <a href="#">Accommodation</a>
-    <a href="#">Destinations</a>
-    <div class="search">
-        <input type="text" placeholder="SEARCH">
-        <div class="button-src">
-            <button><i class="fa fa-search"></i></button>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --primary-blue: #40B7E1;
+            --dark-bg: #0A2533;
+            --text-gray: #8B98A3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: var(--dark-bg);
+            padding: 60px 80px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .brand-section {
+            max-width: 400px;
+        }
+
+        .float-homes-logo {
+            margin-bottom: 24px;
+            width: 200px;
+        }
+
+        .brand-description {
+            color: var(--text-gray);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .travelai-logo {
+            width: 180px;
+        }
+
+        .newsletter-section {
+            max-width: 460px;
+        }
+
+        .newsletter-section h2 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 4px;
+            padding: 12px 16px;
+            color: white;
+        }
+
+        .newsletter-form button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .newsletter-terms {
+            color: var(--text-gray);
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .partner-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .partner-logos img {
+            height: 24px;
+            opacity: 0.7;
+        }
+
+        .footer-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .language-currency {
+            display: flex;
+            gap: 12px;
+        }
+
+        .language-currency select {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .agent-hotline {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1440px) {
+            .footer {
+                padding: 60px;
+            }
+            
+            .footer-links {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .footer {
+                padding: 40px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px;
+            }
+
+            .partner-logos {
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .footer-controls {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer {
+                padding: 24px;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .language-currency {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .language-currency select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="brand-section">
+                <img src="float-homes-logo.png" alt="Float Homes" class="float-homes-logo">
+                <p class="brand-description">
+                    Lorem ipsum dolor amet, consectetuer adipiscing elit. Eleifend sapien nunc venenatis a porttitor. Habitasse turpis elit ligula malesuada cura.
+                </p>
+                <img src="travelai-logo.png" alt="TravelAI" class="travelai-logo">
+            </div>
+
+            <div class="newsletter-section">
+                <h2>SIGN UP FOR THE FLOAT HOMES NEWSLETTER</h2>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Please enter your email">
+                    <button>SUBMIT</button>
+                </div>
+                <p class="newsletter-terms">By subscribing, you agree to our Privacy Policy and Terms of Use.</p>
+            </div>
         </div>
-    </div>
-</div>
-<!-- Hamburger Menu Icon -->
-<div class="hamburger" onclick="toggleMenu()">
-    &#9776; <!-- Unicode for hamburger icon -->
-</div>
-<!-- Hidden Menu -->
-<div class="dropdown-menu">
-    <a href="#">Accommodation</a>
-    <a href="#">Destinations</a>
-</div>
-</div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+                <h3>EUROPE</h3>
+                <a href="#">Facilisis fusce</a>
+                <a href="#">Sem nunc</a>
+                <a href="#">Auctor tellus</a>
+                <a href="#">Sit ornare</a>
+                <a href="#">Tristique adipiscing</a>
+                <a href="#">Nunc semper</a>
+            </div>
+            <div class="footer-column">
+                <h3>ASIAN</h3>
+                <a href="#">Blandit nec</a>
+                <a href="#">Laoreet ornare</a>
+                <a href="#">Semper imperdiet</a>
+                <a href="#">Justo nunc</a>
+                <a href="#">Mi porttitor</a>
+                <a href="#">Nibh aliquet</a>
+            </div>
+            <div class="footer-column">
+                <h3>USA & CANADA</h3>
+                <a href="#">Faucibus at</a>
+                <a href="#">Purus feugiat</a>
+                <a href="#">Dignissim tristique</a>
+                <a href="#">Tempor penatibus</a>
+                <a href="#">Blandit elementum</a>
+                <a href="#">Lectus morbi</a>
+            </div>
+            <div class="footer-column">
+                <h3>SOUTH AMERICA</h3>
+                <a href="#">Nulla sed</a>
+                <a href="#">Commodo quis</a>
+                <a href="#">Elementum pellente</a>
+                <a href="#">Sit velit</a>
+                <a href="#">Cursus cursus</a>
+                <a href="#">Sed integer</a>
+            </div>
+            <div class="footer-column">
+                <h3>COMPANY</h3>
+                <a href="#">My Profile</a>
+                <a href="#">List Your Property</a>
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+
+        <div class="partner-logos">
+            <img src="kayak-logo.png" alt="Kayak">
+            <img src="vrbo-logo.png" alt="Vrbo">
+            <img src="hometogo-logo.png" alt="HomeToGo">
+            <img src="booking-logo.png" alt="Booking.com">
+            <img src="trip-logo.png" alt="Trip.com">
+            <img src="expedia-logo.png" alt="Expedia">
+        </div>
+
+        <div class="footer-controls">
+            <div class="language-currency">
+                <select>
+                    <option>USD</option>
+                </select>
+                <select>
+                    <option>UNITED STATES</option>
+                </select>
+            </div>
+            <a href="tel:+18889999999" class="agent-hotline">
+                <!-- Phone Icon SVG will go here -->
+                Agent Hotline +1 (888) 999-9999
+            </a>
+            <div class="social-links">
+                <!-- Social Media Icons SVGs will go here -->
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2024 Float Homes. All Rights Reserved</div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy policy</a>
+                <a href="#">Terms and conditions</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
