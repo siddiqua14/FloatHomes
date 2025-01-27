@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Listing</title>
     <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/media.css">
     <link rel="stylesheet" href="/CSS/calender.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
 </head>
@@ -95,8 +94,8 @@
             <a href="#">Categories</a>
             <a href="#">Archives</a>
             <div class="search">
-                <input type="text" placeholder="Search" class="search-input">
-                <div class="search-icon-wrapper">
+                <input type="text" placeholder="Search" class="search-input" readonly>
+                <div class="search-icon-wrapper" onclick="highlightSelectWrapper()">
                     <i class="uil uil-search search-icon"></i>
                 </div>
             </div>
@@ -109,9 +108,7 @@
                 </div>
                 <i class="uil uil-bars navOpenBtn"></i>
             </div>
-            <div class="mobile-search-input">
-                <input type="text" placeholder="Search">
-            </div>
+            
             <div class="nav-links">
                 <i class="uil uil-times navCloseBtn"></i>
                 <a href="#">Blog Home</a>
@@ -137,11 +134,9 @@
                 <h2 class="search-title">False Creek Vacation Rentals</h2>
                 <form id="search-form">
                     <div class="form-group">
-                        <div class="select-wrapper">
+                        <div class="select-wrapper" id="select-wrapper">
                             <label class="input-label">LOCATION</label>
-                            <select id="location">
-                                <option value="false-creek">False Creek</option>
-                            </select>
+                            <input type="text" id="location" placeholder="False Creek">
                         </div>
                     </div>
 
@@ -166,17 +161,23 @@
         </div>
     </div>
     <div class="container">
+        <h3>Would you like to search again or try one of these other properties in your area.</h3>
         <div class="property-grid">
             <!-- Row 1 -->
             <div class="property-tile">
                 <div class="image-slider">
                     <button class="navbtn left">&#10094;</button>
                     <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
                     <div class="slider-images">
                         <img src="/img/1.webp" alt="Property Image 1">
                         <img src="/img/hero.jpg" alt="Property Image 2">
                         <img src="/img/images.jpeg" alt="Property Image 3">
-                        <img src="image4.jpg" alt="Property Image 4">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
                     </div>
                     <div class="slider-dots">
                         <span class="dot active"></span>
@@ -184,99 +185,520 @@
                         <span class="dot"></span>
                         <span class="dot"></span>
                     </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
                 </div>
                 <div class="property-info">
-                    <span class="price">From ৳17,133</span>
-                    <div class="rating">
-                        <i class="rating-icon">👍</i> <span>7.0</span> (1 Review)
-                    </div>
-                    <h3 class="title">Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h3>
-                    <ul class="features">
-                        <li>Air Conditioner</li>
-                        <li>Balcony/Terrace</li>
-                        <li>Breakfast</li>
-                    </ul>
-                    <p class="location">Dubai > Downtown Dubai</p>
-                    <div class="booking">
-                        <span>Booking.com</span>
-                        <button class="availability-btn">View Availability</button>
-                    </div>
-                </div>
-            </div>
-            <div class="property-tile">
-                <div class="image-slider">
-                    <button class="navbtn left">&#10094;</button>
-                    <button class="navbtn right">&#10095;</button>
-                    <div class="slider-images">
-                        <img src="/img/1.webp" alt="Property Image 1">
-                        <img src="/img/hero.jpg" alt="Property Image 2">
-                        <img src="/img/images.jpeg" alt="Property Image 3">
-                        <img src="image4.jpg" alt="Property Image 4">
-                    </div>
-                    <div class="slider-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
-                <div class="property-info">
-                    <span class="price">From ৳17,133</span>
-                    <div class="rating">
-                        <i class="rating-icon">👍</i> <span>7.0</span> (1 Review)
-                    </div>
-                    <h3 class="title">Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h3>
-                    <ul class="features">
-                        <li>Air Conditioner</li>
-                        <li>Balcony/Terrace</li>
-                        <li>Breakfast</li>
-                    </ul>
-                    <p class="location">Dubai > Downtown Dubai</p>
-                    <div class="booking">
-                        <span>Booking.com</span>
-                        <button class="availability-btn">View Availability</button>
-                    </div>
-                </div>
-            </div>
-            <div class="property-tile">
-                <div class="image-slider">
-                    <button class="navbtn left">&#10094;</button>
-                    <button class="navbtn right">&#10095;</button>
-                    <div class="slider-images">
-                        <img src="/img/1.webp" alt="Property Image 1">
-                        <img src="/img/hero.jpg" alt="Property Image 2">
-                        <img src="/img/images.jpeg" alt="Property Image 3">
-                        <img src="image4.jpg" alt="Property Image 4">
-                    </div>
-                    <div class="slider-dots">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
-                <div class="property-info">
-                    <span class="price">From ৳17,133</span>
-                    <div class="rating">
-                        <i class="rating-icon">👍</i> <span>7.0</span> (1 Review)
-                    </div>
-                    <h3 class="title">Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h3>
-                    <ul class="features">
-                        <li>Air Conditioner</li>
-                        <li>Balcony/Terrace</li>
-                        <li>Breakfast</li>
-                    </ul>
-                    <p class="location">Dubai > Downtown Dubai</p>
-                    <div class="booking">
-                        <span>Booking.com</span>
-                        <button class="availability-btn">View Availability</button>
-                    </div>
-                </div>
-            </div>
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
 
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
+            <div class="property-tile">
+                <div class="image-slider">
+                    <button class="navbtn left">&#10094;</button>
+                    <button class="navbtn right">&#10095;</button>
+                    <div class="action-buttons">
+                        <div class="action-button" title="View"><i class="fa fa-eye"></i></div>
+                        <div class="action-button" title="Location"><i class="fa fa-map-marker"></i></div>
+                        <div class="action-button" title="Save"><i class="fa fa-heart-o"></i></div>
+                    </div>
+                    <div class="slider-images">
+                        <img src="/img/1.webp" alt="Property Image 1">
+                        <img src="/img/hero.jpg" alt="Property Image 2">
+                        <img src="/img/images.jpeg" alt="Property Image 3">
+                        <img src="/img/hero.jpg" alt="Property Image 4">
+                    </div>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="price-tag">From $295<span class="price-info">i</span></div>
+                </div>
+                <div class="property-info">
+                    <div class="rating-container">
+                        <div class="rating">
+                            <i class="star-icon">★</i>
+                            <span class="rating-value">10.0</span>
+                            <span class="review-count">(15 Reviews)</span>
+                            <span class="property-type">Boat Rental</span>
+                        </div>
+
+                    </div>
+                    <div class="title">
+                        <h4>Keysplease 3 B/R Burj View Apt, South Ridge Downtown Dubai</h4>
+                    </div>
+                    
+                    <div class="amenities">
+                        <span>Air Conditioned</span>
+                        <span>•</span>
+                        <span>Parking</span>
+                        <span>•</span>
+                        <span>Pet Friendly</span>
+                    </div>
+                    <p class="location">Dubai > Downtown Dubai</p>
+                    <div class="booking">
+                        <a href="#"><img
+                            src="https://static.rentbyowner.com/release/28.0.6/static/images/booking.svg"
+                            alt="Booking.com"></a>
+                        <button class="availability-btn">View Availability</button>
+                    </div>
+                </div>
+            </div>
             <!-- Add more tiles here... -->
         </div>
-
+        <div class="view-more-container">
+            <a href="#" class="view-more">VIEW MORE</a>
+        </div>
         <div class="location-header">
             <h1>Discover the Charm of False Creek: Vancouver's Vibrant Waterfront Neighborhood</h1>
 
@@ -441,7 +863,7 @@
                             fill="white" />
                     </svg>
 
-                    <h4 class="powered-by">Powered by TravelAI</h4>
+
                 </div>
             </div>
 

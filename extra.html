@@ -1,372 +1,553 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
-            --primary-blue: #40B7E1;
-            --dark-bg: #0A2533;
-            --text-gray: #8B98A3;
+            --primary-color: #004657;
+            --secondary-color: #00BCD4;
+            --text-color: #ffffff;
+            --footer-link-color: rgba(255, 255, 255, 0.7);
         }
 
-        * {
+        /* Base Styles */
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
             font-family: Arial, sans-serif;
-            background-color: var(--dark-bg);
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--text-color);
         }
 
         .footer {
-            width: 100%;
-            background-color: var(--dark-bg);
-            padding: 60px 80px;
+            padding: 48px 64px;
+            background-color: var(--primary-color);
         }
 
-        .footer-top {
+        /* Footer Container */
+        .footer-container {
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        /* Footer Top Section */
+        .footer-menus {
             display: flex;
-            justify-content: space-between;
-            gap: 40px;
-            margin-bottom: 60px;
+            gap: 48px;
+            margin-bottom: 48px;
         }
 
-        .brand-section {
-            max-width: 400px;
+        .footer-box-left {
+            flex: 0 0 25%;
         }
 
-        .float-homes-logo {
-            margin-bottom: 24px;
-            width: 200px;
+        .footer-box-right {
+            flex: 0 0 75%;
         }
 
-        .brand-description {
-            color: var(--text-gray);
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-        }
-
-        .travelai-logo {
+        .logo-footer svg {
             width: 180px;
+            height: auto;
+            margin-bottom: 24px;
         }
 
-        .newsletter-section {
-            max-width: 460px;
-        }
-
-        .newsletter-section h2 {
+        .info {
             font-size: 14px;
-            font-weight: 600;
+            line-height: 1.5;
+            color: var(--footer-link-color);
+            margin-bottom: 24px;
+        }
+
+        /* Newsletter Section */
+        .footer-newsletter {
+            margin-bottom: 48px;
+        }
+
+        .newsletter-text {
+            font-size: 16px;
+            font-weight: bold;
             margin-bottom: 16px;
         }
 
-        .newsletter-form {
+        .footer-sign-up form {
             display: flex;
             gap: 8px;
             margin-bottom: 8px;
         }
 
-        .newsletter-form input {
+        .footer-sign-up input {
             flex: 1;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 4px;
-            padding: 12px 16px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: transparent;
             color: white;
+            border-radius: 4px;
         }
 
-        .newsletter-form button {
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 4px;
+        .footer-sign-up button {
             padding: 12px 24px;
+            background-color: var(--secondary-color);
+            border: none;
+            color: white;
+            border-radius: 4px;
             cursor: pointer;
-            font-weight: 500;
         }
 
-        .newsletter-terms {
-            color: var(--text-gray);
-            font-size: 12px;
+        /* Footer Menu Items */
+        .footer-items-wrapper {
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
         }
 
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
+        .footer-items {
+            flex: 1;
         }
 
-        .footer-column h3 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .footer-column a {
-            display: block;
-            color: var(--text-gray);
-            text-decoration: none;
-            font-size: 14px;
+        .footer-items .title {
+            font-weight: bold;
             margin-bottom: 16px;
         }
 
-        .partner-logos {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 40px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            margin-bottom: 40px;
+        .footer-menu-list li {
+            margin-bottom: 12px;
         }
 
-        .partner-logos img {
-            height: 24px;
-            opacity: 0.7;
-        }
-
-        .footer-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .language-currency {
-            display: flex;
-            gap: 12px;
-        }
-
-        .language-currency select {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
-
-        .agent-hotline {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-            color: white;
+        .footer-menu-list a {
+            color: var(--footer-link-color);
             text-decoration: none;
+            font-size: 14px;
         }
 
-        .social-links {
+        /* Partner Logos */
+        .footer-partner-logos {
+            padding: 32px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .partner-logos-area ul {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            padding-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-currency-dd-all {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-social-list {
             display: flex;
             gap: 16px;
         }
 
-        .social-links a {
-            color: white;
-            text-decoration: none;
+        .footer-social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--footer-link-color);
         }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-gray);
-            font-size: 14px;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        .footer-bottom-links a {
-            color: var(--text-gray);
-            text-decoration: none;
-        }
-
-        @media (max-width: 1440px) {
-            .footer {
-                padding: 60px;
-            }
-            
-            .footer-links {
-                gap: 30px;
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 991px) {
             .footer {
-                padding: 40px;
+                padding: 32px 24px;
             }
 
-            .footer-top {
+            .footer-menus {
                 flex-direction: column;
             }
 
-            .footer-links {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 40px;
+            .footer-box-left,
+            .footer-box-right {
+                flex: 0 0 100%;
             }
 
-            .partner-logos {
+            .footer-items-wrapper {
                 flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
             }
 
-            .footer-controls {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .footer {
-                padding: 24px;
-            }
-
-            .footer-links {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
+            .footer-items {
+                flex: 0 0 calc(50% - 12px);
             }
 
             .footer-bottom {
                 flex-direction: column;
-                gap: 20px;
+                gap: 24px;
                 text-align: center;
             }
 
-            .footer-bottom-links {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .language-currency {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .language-currency select {
-                width: 100%;
+            .partner-logos-area ul {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
 </head>
+
 <body>
-    <footer class="footer">
-        <div class="footer-top">
-            <div class="brand-section">
-                <img src="float-homes-logo.png" alt="Float Homes" class="float-homes-logo">
-                <p class="brand-description">
-                    Lorem ipsum dolor amet, consectetuer adipiscing elit. Eleifend sapien nunc venenatis a porttitor. Habitasse turpis elit ligula malesuada cura.
-                </p>
-                <img src="travelai-logo.png" alt="TravelAI" class="travelai-logo">
-            </div>
+    <div class="footer max-container relative webp-img scroll-bottom" id="footer">
+        <div class="footer-container">
+            <div class="footer-top w-full">
+                <div class="footer-menus">
+                    <div class="footer-box-left">
+                        <div class="logo-footer">
+                            <svg>ii</svg>
+                        </div>
+                        <p class="info">FloatHomes has helped millions of travelers find the perfect vacation float
+                            homes.
+                            Book directly and compare the best deals across a global network of trusted travel sellers.
+                            We
+                            feature more than 10M properties located in 196 countries, and 180,000+ cities around the
+                            world.
+                        </p>
+                        <div class="travelai-holder">
+                            <div class="d-flex powered-block">
+                                <a title="Travel AI" aria-label="Travel AI" href="https://www.travelai.com"
+                                    class="powered-logo" target="_blank">
+                                    <svg class="icon">
+                                        <use xlink:href="#travel_ai"></use>
+                                    </svg>
+                                </a>
+                                <div class="powered-text">
+                                    <div translate="no">Float Homes</div>
+                                    <div>Powered by TravelAi</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-box-right">
 
-            <div class="newsletter-section">
-                <h2>SIGN UP FOR THE FLOAT HOMES NEWSLETTER</h2>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Please enter your email">
-                    <button>SUBMIT</button>
+                        <div class="footer-newsletter">
+                            <div class="newsletter-text no-margin text-upper">Sign Up for the float homes Newsletter
+                            </div>
+
+                            <div class="footer-sign-up">
+                                <form class="d-flex justify-start align-item-center js-email-subscription-form"
+                                    action="/api/v1/user/subscribe" method="post">
+                                    <input class="js-subscription-email ellipsis font-16" type="text"
+                                        placeholder="Please enter your email">
+                                    <button
+                                        class="js-subscription-btn footer-home-search-btn btn-grad cursor-pointer ellipsis text-center text-upper"
+                                        type="submit">SUBMIT</button>
+                                </form>
+                                <span>By subscribing, you agree to our <a href="/privacy-policy" target="_blank">Privacy
+                                        Policy</a> and <a href="/site-terms" target="_blank">Terms of Use</a>.</span>
+                                <p class="js-subscription-error-message bookmark-error-message text-center"></p>
+                            </div>
+                        </div>
+
+                        <div class="footer-items-wrapper d-flex">
+                            <div class="footer-items">
+                                <div class="title">Europe</div>
+                                <ul class="footer-menu-list no-list-style no-padding">
+                                    <li class="ellipsis">
+                                        <a href="/all/netherlands/north-holland/amsterdam">
+                                            Amsterdam
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/spain/catalonia/barcelona">
+                                            Barcelona
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/france/paris">
+                                            Paris
+                                        </a>
+                                    </li>
+
+                                    <li class="ellipsis">
+                                        <a href="/all/italy/lazio/rome">
+                                            Rome
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-items">
+                                <div class="title">Asian</div>
+                                <ul class="footer-menu-list no-list-style no-padding">
+                                    <li class="ellipsis">
+                                        <a href="/all/india/srinagar">
+                                            Srinagar
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/vietnam/quang-ninh/ha-long">
+                                            Ha Long
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/india/kerala/alappuzha">
+                                            Alappuzha (Alleppey)
+                                        </a>
+                                    </li>
+
+                                    <li class="ellipsis">
+                                        <a href="/all/vietnam/hanoi-province/hanoi">
+                                            Hanoi
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-items">
+                                <div class="title">USA &amp; Canada </div>
+                                <ul class="footer-menu-list no-list-style no-padding">
+                                    <li class="ellipsis">
+                                        <a href="/all/usa/iowa/key-west">
+                                            Key West
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/usa/florida/key-largo">
+                                            Key Largo
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/usa/louisiana/venice">
+                                            Venice
+                                        </a>
+                                    </li>
+
+                                    <li class="ellipsis">
+                                        <a href="/all/usa/florida/st-augustine">
+                                            St. Augustine
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-items">
+                                <div class="title">South America</div>
+                                <ul class="footer-menu-list no-list-style no-padding">
+                                    <li class="ellipsis">
+                                        <a href="/all/brazil/southeast-region/angra-dos-reis">
+                                            Angra dos Reis
+                                        </a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/all/argentina/buenos-aires">
+                                            Buenos Aires
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-items">
+                                <div class="title">Company</div>
+                                <ul class="footer-menu-list no-list-style no-padding">
+                                    <li class="ellipsis">
+                                        <span class="cursor-pointer js-user-login">My Profile</span>
+                                        <span class="cursor-pointer js-user-logout underlined hidden">(Log Out)</span>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/addalisting">List Your Property</a>
+                                    </li>
+                                    <li class="ellipsis">
+                                        <a href="/about-us">About Us</a>
+                                    </li>
+
+                                    <li class="ellipsis">
+                                        <a href="/faq">FAQ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <p class="newsletter-terms">By subscribing, you agree to our Privacy Policy and Terms of Use.</p>
+            </div>
+
+
+            <div class="footer-partner-logos d-flex justify-between align-item-center">
+                <div class="partner-logos-area">
+                    <div class="top-partner-logo">
+                        <ul class="d-flex align-item-center">
+                            <li><img loading="lazy"
+                                    src="https://static.floathomes.com/release/29.0.1/static/images/sites/floathomes.com/kayak.svg"
+                                    width="125" height="24" alt="kayak"></li>
+                            <li><img loading="lazy"
+                                    src="https://static.floathomes.com/release/29.0.1/static/images/sites/floathomes.com/vrbo.svg"
+                                    width="125" height="40" alt="vrbo"></li>
+                            <li><img loading="lazy"
+                                    src="https://static.floathomes.com/release/29.0.1/static/images/sites/floathomes.com/hometogo.svg"
+                                    width="522" height="284" alt="hometogo"></li>
+                            <li><img loading="lazy"
+                                    src="https://static.floathomes.com/release/29.0.1/static/images/sites/floathomes.com/booking.com.svg"
+                                    width="80" height="14" alt="booking.com"></li>
+                            <li><img loading="lazy"
+                                    src="https://static.floathomes.com/release/29.0.1/static/images/sites/floathomes.com/trip.com.svg"
+                                    width="16" height="16" alt="trip.com"></li>
+                            <li><img loading="lazy"
+                                    src="https://static.floathomes.com/release/29.0.1/static/images/sites/floathomes.com/expedia.svg"
+                                    width="144" height="32" alt="expedia"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+            <div class="footer-content">
+                <div class="footer-bottom">
+                    <div class="footer-currency-dd-all d-flex align-item-center">
+                        <div class="footer-currency-dd">
+                            <div class="nav-link cursor-pointer custom-currency">
+                                <div id="js-currency-sort" class="js-currency-sort select-wrap"
+                                    data-currency-country="BD">
+                                    <ul class="default-option">
+                                        <li>
+                                            <div class="option">
+                                                <p>৳ (BDT)</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="select-ul">
+
+                                        <li data-currency-country="US">
+                                            <div class="option">
+                                                <p>$ (USD)</p>
+                                            </div>
+                                        </li>
+
+                                        <li data-currency-country="SG">
+                                            <div class="option">
+                                                <p>$ (SGD)</p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> &nbsp;
+                        <div class="language-currency-dd" hidden="">
+                            <div class="nav-link cursor-pointer custom-currency">
+                                <div id="js-language-picker-container" class="select-wrap">
+                                    <ul class="default-option">
+                                        <li>
+                                            <div class="option">
+                                                <p></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <ul class="footer-social-list no-list-style inline-list no-margin no-padding">
+                            <li>
+                                <a href="https://www.facebook.com/floathomes" title="floathomes Facebook"
+                                    target="_blank" rel="noopener" class="footer-social-link">
+                                    <svg class="icon">
+                                        <use xlink:href="#facebook-fill-brands"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://x.com/floathomes" title="floathomes Twitter" target="_blank"
+                                    rel="noopener" class="footer-social-link">
+                                    <svg class="icon">
+                                        <use xlink:href="#twitter-brands"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/floathomes" title="floathomes Instagram"
+                                    target="_blank" rel="noopener" class="footer-social-link">
+                                    <svg class="icon">
+                                        <use xlink:href="#instagram-brands"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-copy-right-area">
+                        <div class="copy-right-txt font-12">
+                            © 2025 <a href="/" title="Float Homes"> FloatHomes.com</a>. All Rights Reserved.
+                        </div>
+                        <ul class="footer-site-map no-list-style inline-list no-margin no-padding font-12">
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/site-terms">Terms and Conditions</a></li>
+                            <li><a href="/site-map">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="cookie-footer-banner fixed hidden" id="js-cookie-banner">
+            <div class="cookie-footer-banner-content text-white font-11 relative">
+                <div class="cookie-footer-banner-title">
+                    We use cookies. By using our website you agree to our <a id="cookieBannerPrivacyId"
+                        href="/privacy-policy#site-cookie-policy">Cookie Policy</a>.
+                </div>
+                <div class="cookie-footer-banner-button">
+                    <button class="absolute text-white font-11 cursor-pointer ellipsis" id="js-cookie-accept">I
+                        Agree</button>
+                </div>
             </div>
         </div>
 
-        <div class="footer-links">
-            <div class="footer-column">
-                <h3>EUROPE</h3>
-                <a href="#">Facilisis fusce</a>
-                <a href="#">Sem nunc</a>
-                <a href="#">Auctor tellus</a>
-                <a href="#">Sit ornare</a>
-                <a href="#">Tristique adipiscing</a>
-                <a href="#">Nunc semper</a>
-            </div>
-            <div class="footer-column">
-                <h3>ASIAN</h3>
-                <a href="#">Blandit nec</a>
-                <a href="#">Laoreet ornare</a>
-                <a href="#">Semper imperdiet</a>
-                <a href="#">Justo nunc</a>
-                <a href="#">Mi porttitor</a>
-                <a href="#">Nibh aliquet</a>
-            </div>
-            <div class="footer-column">
-                <h3>USA & CANADA</h3>
-                <a href="#">Faucibus at</a>
-                <a href="#">Purus feugiat</a>
-                <a href="#">Dignissim tristique</a>
-                <a href="#">Tempor penatibus</a>
-                <a href="#">Blandit elementum</a>
-                <a href="#">Lectus morbi</a>
-            </div>
-            <div class="footer-column">
-                <h3>SOUTH AMERICA</h3>
-                <a href="#">Nulla sed</a>
-                <a href="#">Commodo quis</a>
-                <a href="#">Elementum pellente</a>
-                <a href="#">Sit velit</a>
-                <a href="#">Cursus cursus</a>
-                <a href="#">Sed integer</a>
-            </div>
-            <div class="footer-column">
-                <h3>COMPANY</h3>
-                <a href="#">My Profile</a>
-                <a href="#">List Your Property</a>
-                <a href="#">About Us</a>
-                <a href="#">Blog</a>
-                <a href="#">FAQ</a>
-            </div>
-        </div>
+    </div>
 
-        <div class="partner-logos">
-            <img src="kayak-logo.png" alt="Kayak">
-            <img src="vrbo-logo.png" alt="Vrbo">
-            <img src="hometogo-logo.png" alt="HomeToGo">
-            <img src="booking-logo.png" alt="Booking.com">
-            <img src="trip-logo.png" alt="Trip.com">
-            <img src="expedia-logo.png" alt="Expedia">
-        </div>
+    <script>
+        // Currency Dropdown
+        document.addEventListener('DOMContentLoaded', function () {
+            const currencySort = document.getElementById('js-currency-sort');
+            const defaultOption = currencySort.querySelector('.default-option');
+            const selectUl = currencySort.querySelector('.select-ul');
 
-        <div class="footer-controls">
-            <div class="language-currency">
-                <select>
-                    <option>USD</option>
-                </select>
-                <select>
-                    <option>UNITED STATES</option>
-                </select>
-            </div>
-            <a href="tel:+18889999999" class="agent-hotline">
-                <!-- Phone Icon SVG will go here -->
-                Agent Hotline +1 (888) 999-9999
-            </a>
-            <div class="social-links">
-                <!-- Social Media Icons SVGs will go here -->
-                <a href="#" aria-label="Facebook">FB</a>
-                <a href="#" aria-label="Twitter">TW</a>
-                <a href="#" aria-label="Instagram">IG</a>
-            </div>
-        </div>
+            defaultOption.addEventListener('click', function () {
+                currencySort.classList.toggle('active');
+            });
 
-        <div class="footer-bottom">
-            <div>© 2024 Float Homes. All Rights Reserved</div>
-            <div class="footer-bottom-links">
-                <a href="#">Privacy policy</a>
-                <a href="#">Terms and conditions</a>
-                <a href="#">Sitemap</a>
-            </div>
-        </div>
-    </footer>
+            const options = selectUl.querySelectorAll('li');
+            options.forEach(option => {
+                option.addEventListener('click', function () {
+                    const selectedText = this.querySelector('p').textContent;
+                    defaultOption.querySelector('p').textContent = selectedText;
+                    currencySort.classList.remove('active');
+                });
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!currencySort.contains(e.target)) {
+                    currencySort.classList.remove('active');
+                }
+            });
+        });
+
+        // Cookie Banner
+        document.addEventListener('DOMContentLoaded', function () {
+            const cookieBanner = document.getElementById('js-cookie-banner');
+            const acceptButton = document.getElementById('js-cookie-accept');
+
+            if (!localStorage.getItem('cookieAccepted')) {
+                cookieBanner.classList.remove('hidden');
+            }
+
+            acceptButton.addEventListener('click', function () {
+                localStorage.setItem('cookieAccepted', 'true');
+                cookieBanner.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
+
 </html>

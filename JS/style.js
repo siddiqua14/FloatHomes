@@ -40,6 +40,43 @@ document.querySelectorAll('.image-slider').forEach(slider => {
 });
 
 
+function highlightSelectWrapper() {
+    // Get the select-wrapper element
+    const selectWrapper = document.getElementById('select-wrapper');
+
+    // Add the highlight effect
+    selectWrapper.style.border = '2px solid #007bff';
+
+    // Function to remove highlight when clicking outside
+    function handleClickOutside(event) {
+        if (!selectWrapper.contains(event.target)) {
+            // Reset the border
+            selectWrapper.style.border = '1px solid #E5E7EB';
+            // Remove this event listener
+            document.removeEventListener('click', handleClickOutside);
+        }
+    }
+
+    // Add a click event listener to the document
+    document.addEventListener('click', handleClickOutside);
+}
+
+// Attach the function to the search-icon-wrapper click
+document.querySelector('.search-icon-wrapper').addEventListener('click', (event) => {
+    // Prevent the click from triggering the outside click listener immediately
+    event.stopPropagation();
+    highlightSelectWrapper();
+});
+// Attach the function to the mobile-search-icon-wrapper click
+document.querySelector('.mobile-search-icon-wrapper').addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent the click from triggering the outside click listener immediately
+    highlightSelectWrapper();
+});
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
     const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
