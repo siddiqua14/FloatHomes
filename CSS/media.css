@@ -6,13 +6,7 @@
     .property-tile:nth-child(n+9) {
         display: none;
     }
-    .footer {
-        padding: 60px;
-    }
 
-    .footer-links {
-        gap: 30px;
-    }
 }
 @media (max-width: 1024px) {
     .location-grid {
@@ -23,9 +17,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .footer-links {
-        grid-template-columns: repeat(3, 1fr);
-    }
+
 }
 
 @media (max-width: 991px) {
@@ -86,33 +78,7 @@
     .property-tile:nth-child(n+7) {
         display: none;
     }
-    .footer {
-        padding: 40px;
-    }
 
-    .footer-top {
-        flex-direction: column;
-    }
-
-    .footer-links {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-    }
-
-    .partner-logos {
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-    }
-
-    .footer-controls {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .brand-section {
-        padding: 0;
-        margin: 0;
-    }
 }
 
 @media (max-width: 768px) {
@@ -148,50 +114,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-top {
-        flex-direction: column;
-        /* Stack items vertically */
-        align-items: center;
-        gap: 20px;
-    }
-
-    .brand-section {
-        padding: 15px;
-        max-width: 100%;
-        /* Take up the full width of the container */
-        text-align: center;
-    }
-
-    .float-homes-logo {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 10px;
-        justify-content: center;
-        /* Center the logo */
-    }
-
-    .brand-title {
-        font-size: 20px;
-        /* Reduce the font size */
-    }
-
-    .brand-description {
-        font-size: 12px;
-        /* Reduce the font size */
-        margin-bottom: 20px;
-    }
-
-    .divider-line {
-        width: 100%;
-        /* Adjust width to fill container */
-    }
-
-    .travelai-logo {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 10px;
-        justify-content: center;
-    }
+    
 }
 
 @media screen and (max-width: 700px) {
@@ -468,73 +391,7 @@
         font-size: 12px;
     }
 
-    .footer {
-        padding: 24px;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        /* Stack items vertically */
-        align-items: center;
-        gap: 20px;
-    }
-
-    .brand-section {
-        padding: 15px;
-        max-width: 100%;
-        /* Take up the full width of the container */
-        text-align: center;
-    }
-
-    .brand-title {
-        font-size: 20px;
-        /* Reduce the font size */
-    }
-
-    .brand-description {
-        font-size: 12px;
-        /* Reduce the font size */
-        margin-bottom: 20px;
-    }
-
-    .divider-line {
-        width: 100%;
-        /* Adjust width to fill container */
-    }
-
-    .travelai-logo {
-        gap: 10px;
-        /* Reduce gap between elements */
-    }
-
-    .footer-links {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .newsletter-form {
-        flex-direction: column;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .footer-bottom-links {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .language-currency {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .language-currency select {
-        width: 100%;
-    }
+    
 }
 /* Default: Show only first 10 items (2 rows of 5) */
 .property-tile:nth-child(n+11) {

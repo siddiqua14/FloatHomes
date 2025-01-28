@@ -22,7 +22,10 @@ navCloseBtn.addEventListener("click", () => {
 document.querySelectorAll('.image-slider').forEach(slider => {
     const images = slider.querySelector('.slider-images');
     const dots = slider.querySelectorAll('.dot');
+    const leftBtn = slider.querySelector('.left');
+    const rightBtn = slider.querySelector('.right');
     let index = 0;
+    let autoSlide;
 
     function showSlide(i) {
         index = i < 0 ? dots.length - 1 : i >= dots.length ? 0 : i;
@@ -31,13 +34,36 @@ document.querySelectorAll('.image-slider').forEach(slider => {
         dots[index].classList.add('active');
     }
 
-    slider.querySelector('.left').addEventListener('click', () => showSlide(index - 1));
-    slider.querySelector('.right').addEventListener('click', () => showSlide(index + 1));
-    dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+    function startAutoSlide() {
+        autoSlide = setInterval(() => showSlide(index + 1), 5000);
+    }
 
-    // Auto-slide every 5 seconds
-    setInterval(() => showSlide(index + 1), 5000);
+    function stopAutoSlide() {
+        clearInterval(autoSlide);
+    }
+
+    // Click navigation stops auto-slide and moves slides
+    leftBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index - 1);
+    });
+
+    rightBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index + 1);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            stopAutoSlide();
+            showSlide(i);
+        });
+    });
+
+    // Start auto-slide initially
+    // startAutoSlide();
 });
+
 
 
 function highlightSelectWrapper() {
@@ -73,9 +99,112 @@ document.querySelector('.mobile-search-icon-wrapper').addEventListener('click', 
     highlightSelectWrapper();
 });
 
+///currency
+document.addEventListener('DOMContentLoaded', function() {
+    const selectWrap = document.querySelector('.select-wrap');
+    const defaultOption = document.querySelector('.default-option');
+    const selectUl = document.querySelector('.select-ul');
+    const options = document.querySelectorAll('.select-ul li');
 
+    // Toggle dropdown
+    defaultOption.addEventListener('click', function(e) {
+        e.stopPropagation();
+        selectWrap.classList.toggle('active');
+    });
 
+    // Handle option selection
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            const selectedText = this.querySelector('p').textContent;
+            defaultOption.querySelector('p').textContent = selectedText;
+            selectWrap.classList.remove('active');
+            selectWrap.dataset.currencyCountry = this.dataset.currencyCountry;
+        });
+    });
 
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!selectWrap.contains(e.target)) {
+            selectWrap.classList.remove('active');
+        }
+    });
+});
+///foooter
+document.addEventListener('DOMContentLoaded', function () {
+    const selectWrap = document.querySelector('.js-currency-sort');
+    const defaultOption = selectWrap.querySelector('.default-option');
+    const options = selectWrap.querySelectorAll('.select-ul li');
+
+    // Toggle dropdown
+    defaultOption.addEventListener('click', function (e) {
+        e.stopPropagation();
+        selectWrap.classList.toggle('active');
+    });
+
+    // Handle option selection
+    options.forEach(option => {
+        option.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const selectedText = this.querySelector('p').textContent;
+            const selectedCountry = this.getAttribute('data-currency-country');
+
+            // Update default option text
+            defaultOption.querySelector('p').textContent = selectedText;
+
+            // Update data attribute
+            selectWrap.setAttribute('data-currency-country', selectedCountry);
+
+            // Close dropdown
+            selectWrap.classList.remove('active');
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!selectWrap.contains(e.target)) {
+            selectWrap.classList.remove('active');
+        }
+    });
+
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const selectWrap = document.querySelector('.js-language-sort');
+    const defaultOption = selectWrap.querySelector('.default-option');
+    const options = selectWrap.querySelectorAll('.select-ul li');
+
+    // Toggle dropdown
+    defaultOption.addEventListener('click', function (e) {
+        e.stopPropagation();
+        selectWrap.classList.toggle('active');
+    });
+
+    // Handle option selection
+    options.forEach(option => {
+        option.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const selectedText = this.querySelector('p').textContent;
+            const selectedCountry = this.getAttribute('data-language-country');
+
+            // Update default option text
+            defaultOption.querySelector('p').textContent = selectedText;
+
+            // Update data attribute
+            selectWrap.setAttribute('data-language-country', selectedCountry);
+
+            // Close dropdown
+            selectWrap.classList.remove('active');
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!selectWrap.contains(e.target)) {
+            selectWrap.classList.remove('active');
+        }
+    });
+});
+
+/// calender
 
 document.addEventListener('DOMContentLoaded', function () {
     const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
