@@ -1,35 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 
-}
 
-:root {
-    --primary-blue: #40B7E1;
-    --dark-bg: #0A2533;
-    --text-gray: #8B98A3;
-    --theme-primary: #41AFD2;
-    --var-text-color: #192836;
-    --var-para-text-color: #7D7D7D;
-    --var-font-family: "Lato", serif;
-    /* --var-font-family-home: "Lato", serif;
-    --var-font-family-heading: 'playfair', serif;
-    --var-font-family-muli: "Muli Regular", sans-serif; */
-    --var-common-bg: #003970;
-    --var-search-btn: #41AFD2;
-    --var-common-bg-hover: #003970;
-    --var-common-banner-bg: #003970;
-    --var-gold-bg: #003970;
-    --var-footer-bg: #003970;
-    --var-common-btn-color: #41AFD2;
-
-}
-
-body {
-    color: white;
-    font-family: var(--var-font-family);
-}
 
 .font-12 {
     font-size: 0.75rem;
@@ -84,17 +54,21 @@ body {
 }
 
 .brand-description {
-    color: var(--text-gray);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 40px;
+    border-bottom: 1px solid #fff3;
+    color: #9cb8c5;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    margin: 0;
+    padding: 24px 0 40px;
 }
 
 /* Horizontal Divider */
 .divider-line {
     width: 80%;
     border: 0;
-    border-top: 0.2px solid #b3d9ea36;
+    /* border-top: 0.2px solid #b3d9ea36; */
 }
 
 /* TravelAI Logo */
@@ -206,11 +180,8 @@ body {
 
 .no-list-style {
     list-style: none;
-    /* Removes default bullets */
     padding: 0;
-    /* Removes default padding */
     margin: 0;
-    /* Removes default margin */
 }
 
 .footer-menu-list li {
@@ -225,6 +196,9 @@ body {
     color: inherit;
     transition: .3s;
     text-decoration: none;
+}
+.footer a:hover{
+    color: #ffffff;
 }
 
 .partner-logos {
@@ -281,8 +255,9 @@ body {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, .2);
-    padding: 32px 0 100px;
+    padding: 32px 0 80px;
     display: flex;
+    align-items: center;
     gap: 30px;
     justify-content: space-between;
 }
@@ -294,8 +269,6 @@ body {
 }
 
 .footer-currency-dd {
-    /* width: 200px;
-    font-family: system-ui, -apple-system, sans-serif; */
     position: relative;
     margin-right: 20px;
     width: 100px;
@@ -313,6 +286,9 @@ body {
     font-size: .875rem;
     font-weight: 500;
     border-radius: 4px;
+
+    display: flex;
+    align-items: center;
 }
 
 
@@ -362,7 +338,7 @@ body {
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     /* Adjusted shadow for upward display */
     z-index: 1000;
-    max-height: 300px;
+    max-height: 250px;
     /* Added max-height */
     overflow-y: auto;
     /* Added scroll if needed */
@@ -399,15 +375,17 @@ body {
 .option p {
     margin: 0;
 }
+
 .social-link {
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0;
 }
+
 /* Social icons styles */
 .footer-social-list {
-    
+
     gap: 15px;
     margin: 0;
     padding: 0;
@@ -528,30 +506,32 @@ body {
         gap: 30px;
     }
 
-    .brand-section {
-        max-width: 450px;
-    }
-    
+
+
     .newsletter-form input {
         width: 80%;
     }
-    .footer-links{
+
+    /* .footer-links {
         gap: 10px;
-    }
+    } */
+
     .footer-column {
         width: 80%;
-        
+
     }
-    .footer-column .title{
+
+    .footer-column .title {
         font-size: 0.8rem;
         letter-spacing: 0;
     }
-    .footer-column li{
+
+    .footer-column li {
         font-size: 0.75rem;
         letter-spacing: 0;
     }
+
     .partner-logos {
-        
         gap: 20px;
     }
 
@@ -566,6 +546,119 @@ body {
 
     .agent-hotline {
         justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        padding: 40px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .divider-line {
+        width: 100%;
+    }
+
+    .brand-section {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .brand-title {
+        font-size: 42px;
+    }
+
+    .travelai-logo {
+
+        border-bottom: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .travelai-logo svg {
+        margin: 30px 0 40px 0;
+    }
+
+    .newsletter-section {
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .newsletter-form {
+        width: 50%;
+
+    }
+
+    .newsletter-terms {
+        font-size: 15px;
+    }
+
+    .newsletter-form input {
+        width: calc(100% - 150px);
+        height: 70px;
+    }
+
+    .newsletter-form button {
+        width: 150px;
+        /* Maintain width from desktop */
+        height: 70px;
+        /* Maintain height from desktop */
+    }
+
+    .newsletter-terms {
+        text-align: left;
+        max-width: 633px;
+    }
+
+    .footer-menu-list li {
+        color: #9cb8c5;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .footer-column {
+        text-align: left;
+    }
+
+    .footer-column .title {
+        font-size: 1rem;
+        font-weight: 600;
+        padding-bottom: 15px;
+    }
+
+    .partner-logos {
+        padding: 0;
+        flex-direction: column;
+        gap: 20px;
+        display: grid;
+        justify-content: start;
+    }
+
+    .top-partner-logo ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .top-partner-logo ul li {
+        width: 100%;
+        max-width: 120px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact {
+        width: 100%;
+    }
+
+    .agent-hotline {
+        justify-content: center;
     }
 }
 
@@ -615,8 +708,8 @@ body {
 
     .footer-links {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2%;
     }
 
     .footer-column {
@@ -627,38 +720,90 @@ body {
         padding-bottom: 15px;
     }
 
-    .partner-logos {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .top-partner-logo ul {
-        gap: 20px;
-        justify-content: flex-start;
-    }
-
-    .top-partner-logo ul li {
-        max-width: 100px;
-    }
-
-    .agent-hotline {
-        justify-content: flex-start;
-    }
-    
     .footer-bottom {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        gap: 25px;
+        padding: 35px 0 78px;
+    }
+
+}
+
+@media (max-width: 860px) {
+
+    .footer-bottom {
+        display: grid;
+        justify-content: start;
+    }
+
+    .footer-currency-dd-all {
+        display: grid;
+        justify-content: start;
+        gap: 10px
+    }
+
+    .footer-currency-dd {
+        width: 250px;
+    }
+
+    .footer-social-list.inline-list {
+        padding-left: 0;
+        gap: 30px;
+
+    }
+
+    .footer-copy-right-area {
+        align-items: flex-start;
+    }
+
+    .social-link {
+        display: flex;
+        justify-content: start;
     }
 
 }
 
 @media (max-width: 767px) {
-
+    .footer-links {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3%;
+    }
 
     .newsletter-form {
         max-width: 100%;
     }
+
+    .top-partner-logo ul {
+        gap: 15px;
+    }
+
+    .top-partner-logo ul li {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .newsletter-section h2 {
+        font-size: 16px;
+    }
+
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
+        
+    }
+    /* South America goes to start of second row */
+    .footer-column:nth-child(4) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    /* Company goes to second column of second row */
+    .footer-column:nth-child(5) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
 }
 
 /* Media Query for mobile devices */
@@ -678,6 +823,7 @@ body {
 
     .newsletter-section h2 {
         font-size: 1rem;
+        text-align: start;
     }
 
     .newsletter-form {
@@ -690,7 +836,7 @@ body {
     }
 
     .newsletter-form input {
-        width: calc(100% - 150px);
+        width: 100%;
         /* Maintain proportions */
         height: 70px;
         border-radius: 8px 0 0 8px;
@@ -699,33 +845,38 @@ body {
     }
 
     .newsletter-form button {
-        width: 100%;
-        height: 50px;
+        width: 50%;
         border-radius: 0 8px 8px 0;
         font-size: 16px;
     }
 
     .footer-links {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
     .footer-column .title {
-        font-size: 0.875rem;
+        font-size: 1rem;
     }
 
     .footer-menu-list li {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
+        color: #9cb8c5;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        padding: 5px 0;
+    }
+
+    .partner-logos {
+        padding: 0;
     }
 
     .top-partner-logo ul {
-        gap: 15px;
+        gap: 10px;
     }
 
     .top-partner-logo ul li {
         max-width: 80px;
-        flex: 0 0 calc(33.333% - 10px);
     }
 }
 

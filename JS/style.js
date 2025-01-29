@@ -100,107 +100,96 @@ document.querySelector('.mobile-search-icon-wrapper').addEventListener('click', 
 });
 
 ///currency
-document.addEventListener('DOMContentLoaded', function() {
-    const selectWrap = document.querySelector('.select-wrap');
-    const defaultOption = document.querySelector('.default-option');
-    const selectUl = document.querySelector('.select-ul');
-    const options = document.querySelectorAll('.select-ul li');
 
-    // Toggle dropdown
-    defaultOption.addEventListener('click', function(e) {
-        e.stopPropagation();
-        selectWrap.classList.toggle('active');
-    });
-
-    // Handle option selection
-    options.forEach(option => {
-        option.addEventListener('click', function() {
-            const selectedText = this.querySelector('p').textContent;
-            defaultOption.querySelector('p').textContent = selectedText;
-            selectWrap.classList.remove('active');
-            selectWrap.dataset.currencyCountry = this.dataset.currencyCountry;
-        });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!selectWrap.contains(e.target)) {
-            selectWrap.classList.remove('active');
-        }
-    });
-});
 ///foooter
 document.addEventListener('DOMContentLoaded', function () {
-    const selectWrap = document.querySelector('.js-currency-sort');
-    const defaultOption = selectWrap.querySelector('.default-option');
-    const options = selectWrap.querySelectorAll('.select-ul li');
+    // LANGUAGE DROPDOWN FUNCTIONALITY
+    const languageSelectWrap = document.querySelector('.js-language-sort');
+    const languageDefaultOption = languageSelectWrap.querySelector('.default-option');
+    const languageOptions = languageSelectWrap.querySelectorAll('.select-ul li');
 
-    // Toggle dropdown
-    defaultOption.addEventListener('click', function (e) {
-        e.stopPropagation();
-        selectWrap.classList.toggle('active');
+    // Toggle language dropdown
+    languageDefaultOption.addEventListener('click', function (e) {
+        e.stopPropagation();  // Prevent clicking inside the dropdown from triggering the document listener
+        languageSelectWrap.classList.toggle('active');
     });
 
-    // Handle option selection
-    options.forEach(option => {
+    // Handle language option selection
+    languageOptions.forEach(option => {
         option.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const selectedText = this.querySelector('p').textContent;
-            const selectedCountry = this.getAttribute('data-currency-country');
-
-            // Update default option text
-            defaultOption.querySelector('p').textContent = selectedText;
-
-            // Update data attribute
-            selectWrap.setAttribute('data-currency-country', selectedCountry);
-
-            // Close dropdown
-            selectWrap.classList.remove('active');
-        });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!selectWrap.contains(e.target)) {
-            selectWrap.classList.remove('active');
-        }
-    });
-
-});
-document.addEventListener('DOMContentLoaded', function () {
-    const selectWrap = document.querySelector('.js-language-sort');
-    const defaultOption = selectWrap.querySelector('.default-option');
-    const options = selectWrap.querySelectorAll('.select-ul li');
-
-    // Toggle dropdown
-    defaultOption.addEventListener('click', function (e) {
-        e.stopPropagation();
-        selectWrap.classList.toggle('active');
-    });
-
-    // Handle option selection
-    options.forEach(option => {
-        option.addEventListener('click', function (e) {
-            e.stopPropagation();
+            e.stopPropagation();  // Prevent event propagation to other dropdowns
             const selectedText = this.querySelector('p').textContent;
             const selectedCountry = this.getAttribute('data-language-country');
 
-            // Update default option text
-            defaultOption.querySelector('p').textContent = selectedText;
+            // Update language default option text
+            languageDefaultOption.querySelector('p').textContent = selectedText;
 
-            // Update data attribute
-            selectWrap.setAttribute('data-language-country', selectedCountry);
+            // Update data-language-country attribute
+            languageSelectWrap.setAttribute('data-language-country', selectedCountry);
 
-            // Close dropdown
-            selectWrap.classList.remove('active');
+            // Close language dropdown
+            languageSelectWrap.classList.remove('active');
         });
     });
 
-    // Close dropdown when clicking outside
+    // Close language dropdown when clicking outside
     document.addEventListener('click', function (e) {
-        if (!selectWrap.contains(e.target)) {
-            selectWrap.classList.remove('active');
+        if (!languageSelectWrap.contains(e.target)) {
+            languageSelectWrap.classList.remove('active');
+        }
+    });
+
+    // CURRENCY DROPDOWN FUNCTIONALITY
+    const currencySelectWrap = document.querySelector('.js-currency-sort');
+    const currencyDefaultOption = currencySelectWrap.querySelector('.default-option');
+    const currencyOptions = currencySelectWrap.querySelectorAll('.select-ul li');
+
+    // Toggle currency dropdown
+    currencyDefaultOption.addEventListener('click', function (e) {
+        e.stopPropagation();  // Prevent clicking inside the dropdown from triggering the document listener
+        currencySelectWrap.classList.toggle('active');
+    });
+
+    // Handle currency option selection
+    currencyOptions.forEach(option => {
+        option.addEventListener('click', function (e) {
+            e.stopPropagation();  // Prevent event propagation to other dropdowns
+            const selectedText = this.querySelector('p').textContent;
+            const selectedCountry = this.getAttribute('data-currency-country');
+
+            // Update currency default option text
+            currencyDefaultOption.querySelector('p').textContent = selectedText;
+
+            // Update data-currency-country attribute
+            currencySelectWrap.setAttribute('data-currency-country', selectedCountry);
+
+            // Close currency dropdown
+            currencySelectWrap.classList.remove('active');
+        });
+    });
+
+    // Close currency dropdown when clicking outside
+    document.addEventListener('click', function (e) {
+        if (!currencySelectWrap.contains(e.target)) {
+            currencySelectWrap.classList.remove('active');
         }
     });
 });
 
+
+
+
+///input clear
+document.addEventListener('DOMContentLoaded', function () {
+    const locationInput = document.getElementById('location');
+    const clearButton = document.getElementById('clear-location');
+
+    clearButton.addEventListener('click', function () {
+        locationInput.value = '';
+        clearButton.style.display = 'none';
+    });
+
+    locationInput.addEventListener('input', function () {
+        clearButton.style.display = locationInput.value ? 'block' : 'none';
+    });
+});

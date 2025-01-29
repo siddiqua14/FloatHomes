@@ -1,10 +1,6 @@
-<div class="search-container">
-                <input type="text" placeholder="SEARCH" class="search-input">
-                <button class="search-button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-
-
-
-            
+@media screen and (max-width: 991px) {
+    .footer-bottom {
+        gap: 25px;
+        padding: 35px 0 78px;
+    }
+}
