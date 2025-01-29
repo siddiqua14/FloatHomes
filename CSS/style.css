@@ -232,7 +232,9 @@ body {
     margin-bottom: 12px;
     position: relative;
 }
-
+.form-group input::placeholder {
+    color:#111827;
+}
 .input-label {
     position: absolute;
     left: 16px;
@@ -525,7 +527,7 @@ body {
 }
 
 .review-count {
-    font-family:"Lato", serif;
+    
     color: #393B44;
     font-size: 12px;
     font-weight: 700;
@@ -542,7 +544,7 @@ body {
 .title {
     height: 20px;
     color: #393b44;
-    font-weight: bold;
+    font-weight: 600;
     font-size: .8125rem;
     line-height: 20px;
     letter-spacing: 0;
