@@ -70,7 +70,7 @@
     }
 
     .search-container {
-        top: 45%;
+        top: 52%;
         max-width: 500;
         width: 55%;
         right: 0;
@@ -95,6 +95,9 @@
 
     .container {
         margin-top: auto;
+    }
+    .container h3 {
+        margin: 10px 0 20px 0;
     }
 
     .property-grid {

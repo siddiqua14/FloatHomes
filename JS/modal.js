@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputField = document.getElementById('input-id'); // Hidden input for date selection
     const calendarContainer = document.getElementById('calendar-container');
     const nightElement = document.getElementById('night');
+    const clearButton = document.getElementById('clear-btn');
+    const overlay = document.querySelector('.modal-overlay');
 
     let selectedStartDate = null;
     let selectedEndDate = null;
@@ -49,13 +51,39 @@ document.addEventListener('DOMContentLoaded', function () {
     // Open the calendar modal
     function openCalendar(input) {
         selectedInput = input;
-        calendarModal.style.display = 'block'; // Show the modal
+        calendarModal.style.display = 'block'; 
+        
         initializeDatepicker();
     }
 
     // Close the calendar modal
     function closeCalendar() {
         calendarModal.style.display = 'none'; // Hide the modal
+    }
+    // Clear calendar selection
+    function clearSelection() {
+        // Reset the datepicker
+        if (datepicker) {
+            datepicker.clear();
+        }
+        
+        // Reset variables
+        selectedStartDate = null;
+        selectedEndDate = null;
+        
+        // Clear input values
+        checkInInput.value = '';
+        checkOutInput.value = '';
+        
+        // Reset night count
+        if (nightElement) {
+            nightElement.textContent = '1 Night';
+        }
+        
+        // Add visual feedback
+        const clearBtn = document.querySelector('.clear-btn');
+        clearBtn.classList.add('clicked');
+        setTimeout(() => clearBtn.classList.remove('clicked'), 200);
     }
 
     // Update night count between check-in and check-out dates
@@ -90,4 +118,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Close modal when clicking close button
     calendarClose.addEventListener('click', closeCalendar);
+    // Close on overlay click (outside modal)
+    calendarModal.addEventListener('click', function(e) {
+        if (e.target === calendarModal) {
+            closeCalendar();
+        }
+    });
+
+    // Clear button functionality
+    if (clearButton) {
+        clearButton.addEventListener('click', clearSelection);
+    }
+
+    // Escape key closes modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && calendarModal.style.display === 'block') {
+            closeCalendar();
+        }
+    });
 });

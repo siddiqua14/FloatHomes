@@ -207,7 +207,7 @@
     align-items: center;
     gap: 30px;
     margin-bottom: 35px;
-    padding: 0 20px;
+    /* padding: 0 20px; */
 }
 
 .top-partner-logo {
@@ -235,23 +235,6 @@
     mix-blend-mode: hard-light;
 }
 
-.contact {
-    white-space: nowrap;
-}
-
-.agent-hotline {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #0996c2;
-    border-radius: 4px;
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-}
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, .2);
@@ -271,12 +254,9 @@
 .footer-currency-dd {
     position: relative;
     margin-right: 20px;
-    width: 100px;
+    width: 200px;
 }
 
-.footer-language-dd {
-    width: 250px;
-}
 
 .select-wrap {
     border-width: 1px;
@@ -285,7 +265,7 @@
     position: relative;
     font-size: .875rem;
     font-weight: 500;
-    border-radius: 4px;
+    border-radius: 8px;
 
     display: flex;
     align-items: center;
@@ -432,6 +412,7 @@
     display: flex;
     align-items: center;
     padding-left: 31px;
+    gap: 40px;
 }
 
 .footer-social-list a {
@@ -757,6 +738,8 @@
     .social-link {
         display: flex;
         justify-content: start;
+        margin-top: 20px;
+    
     }
 
 }
