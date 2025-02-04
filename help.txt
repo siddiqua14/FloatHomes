@@ -6,3 +6,26 @@
 }
 
 https://hoteldatepicker.org/
+.search-container {
+        margin: 0 auto;
+        width: 100%;
+        width: 450px;
+        /* margin-right: 0; */
+        /* position: relative; */
+        top: 70px;
+        margin-bottom: 20px;
+    }
+
+
+
+    media (max-width: 991px) {
+    .search-container {
+        /* width: 100%; */
+        width: 450px;
+        /* margin-right: 0; */
+        /* position: relative; */
+        top: 70px;
+        margin-bottom: -88px;
+        z-index: 2;
+        /* margin: 0 auto; */
+    }

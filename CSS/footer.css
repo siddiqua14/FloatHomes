@@ -16,9 +16,14 @@
 
 .footer {
     width: 100%;
+    background: url('/img/footer.png') center/cover;
+    filter: brightness(0.8) saturate(1.5);
     background-color: #113749;
     padding: 60px 80px;
+    z-index: -1;
 }
+
+
 
 .footer-top {
     display: flex;
@@ -31,9 +36,9 @@
 
     color: #FFFFFF;
     border-radius: 10px;
-    font-family: Arial, sans-serif;
+    
     max-width: 500px;
-    margin: 0 auto;
+
 }
 
 /* Float Homes Logo */
@@ -111,7 +116,7 @@
     height: 70px;
     padding: 22px 25.5px;
     border-radius: 8px 0 0 8px;
-    background: #184961;
+    background: none;
     color: #fff;
     outline: none
 }

@@ -50,8 +50,8 @@
             <!-- Smaller screen logo -->
             <div class="logo-responsive">
                 <span class="logo-text">float homes blog</span>
-                    <img class="logo-underline" src="/img/floathomes2.png" alt="" srcset="">
-                
+                <img class="logo-underline" src="/img/floathomes2.png" alt="">
+
 
             </div>
         </div>
@@ -93,42 +93,48 @@
             <span>Tamarindo</span>
         </div>
         <div class="hero-section">
-            <div class="hero-bg"></div>
-            <div class="hero-content">
-                <h2>Looks like there's no properties matching your search in False Creek.</h2>
-
+            <div class="hero-image-wrapper">
+                <img src="/img/hero.png" alt="Hero image">
+                
             </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h2>Looks like there's no properties matching your search in False Creek.
+                        We understand that finding the perfect vacation rental can be challenging. Please try adjusting
+                        your search criteria or check back later.your search criteria or check back later.</h2>
 
-            <div class="search-container">
-                <h2 class="search-title">False Creek Vacation Rentals</h2>
-                <form id="search-form">
-                    <div class="form-group">
-                        <div class="select-wrapper" id="select-wrapper">
-                            <label class="input-label">LOCATION</label>
-                            <input type="text" id="location" placeholder="False Creek">
-                            <span id="clear-location" class="clear-icon">×</span>
+                </div>
 
-                        </div>
-                    </div>
-
-                    <div class="date-inputs">
+                <div class="search-container">
+                    <h2 class="search-title">False Creek Vacation Rentals</h2>
+                    <form id="search-form">
                         <div class="form-group">
-                            <label class="input-label">CHECK-IN</label>
-                            <input type="text" id="check-in" placeholder="11 JAN 2025" readonly>
+                            <div class="select-wrapper" id="select-wrapper">
+                                <label class="input-label">LOCATION</label>
+                                <input type="text" id="location" placeholder="False Creek">
+                                <span id="clear-location" class="clear-icon">×</span>
 
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="input-label">CHECK-OUT</label>
-                            <input type="text" id="check-out" placeholder="21 JAN 2025" readonly>
 
+                        <div class="date-inputs">
+                            <div class="form-group">
+                                <label class="input-label">CHECK-IN</label>
+                                <input type="text" id="check-in" placeholder="11 JAN 2025" readonly>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="input-label">CHECK-OUT</label>
+                                <input type="text" id="check-out" placeholder="21 JAN 2025" readonly>
+
+                            </div>
                         </div>
-                    </div>
 
 
-                    <button type="submit" class="search-btn">SEARCH</button>
-                </form>
+                        <button type="submit" class="search-btn">SEARCH</button>
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
     <div class="container">
@@ -768,6 +774,7 @@
     </div>
 
     <footer class="footer">
+        <div class="footer-bg"></div>
         <div class="footer-top">
             <div class="brand-section">
                 <!-- Float Homes SVG -->
@@ -837,7 +844,7 @@
                         <button>SUBMIT</button>
                     </div>
                     <span class="newsletter-terms">
-                        <p>By subscribing, you agree to our Privacy Policy and Terms of Use.</p>
+                        By subscribing, you agree to our Privacy Policy and Terms of Use.
                     </span>
                 </div>
                 <div class="footer-links d-flex">
@@ -986,7 +993,7 @@
                             width="144" height="32" alt="expedia"></li>
                 </ul>
             </div>
-            
+
         </div>
 
         <div class="footer-content">
@@ -1045,7 +1052,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="social-link">
                         <ul class="footer-social-list no-list-style inline-list no-margin no-padding">
                             <li>
@@ -1105,7 +1112,7 @@
         <div class="modal-overlay"></div>
         <div class="modal-container">
             <div class="modal-header">
-               
+
                 <div class="modal-close-btn" id="js-calendar-close">
                     <i class="fa fa-times"></i>
                 </div>
@@ -1119,7 +1126,7 @@
             <div class="modal-footer">
                 <div class="row">
                     <div class="col-xs-12 col-sm-5 col-md-5">
-                        
+
                         <button id="night-btn" class="continue-btn">
                             <span>Continue</span>
                             <span id="night" class="night-text">1 Night</span>

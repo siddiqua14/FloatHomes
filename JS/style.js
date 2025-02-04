@@ -26,12 +26,47 @@ document.querySelectorAll('.image-slider').forEach(slider => {
     const rightBtn = slider.querySelector('.right');
     let index = 0;
     let autoSlide;
+    
+    const slides = Array.from(images.children);
+    const totalSlides = slides.length;
+
+    // Clone first and last images for seamless looping
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[totalSlides - 1].cloneNode(true);
+    
+    images.appendChild(firstClone); // Append first image at the end
+    images.insertBefore(lastClone, slides[0]); // Insert last image at the beginning
+
+    const newTotalSlides = totalSlides + 2; // Include the cloned slides
+    index = 1; // Start from the real first image
+
+    images.style.transition = "none";
+    images.style.transform = `translateX(-${index * 100}%)`;
 
     function showSlide(i) {
-        index = i < 0 ? dots.length - 1 : i >= dots.length ? 0 : i;
-        images.style.transform = `translateX(-${index * 100}%)`;
+        images.style.transition = "transform 0.5s ease-in-out";
+        images.style.transform = `translateX(-${i * 100}%)`;
+        index = i;
+
+        setTimeout(() => {
+            if (index === 0) {
+                images.style.transition = "none";
+                index = totalSlides;
+                images.style.transform = `translateX(-${index * 100}%)`;
+            } else if (index === newTotalSlides - 1) {
+                images.style.transition = "none";
+                index = 1;
+                images.style.transform = `translateX(-${index * 100}%)`;
+            }
+        }, 500);
+
+        updateDots();
+    }
+
+    function updateDots() {
         dots.forEach(dot => dot.classList.remove('active'));
-        dots[index].classList.add('active');
+        const realIndex = (index === 0 ? totalSlides - 1 : index === newTotalSlides - 1 ? 0 : index - 1);
+        dots[realIndex].classList.add('active');
     }
 
     function startAutoSlide() {
@@ -42,27 +77,28 @@ document.querySelectorAll('.image-slider').forEach(slider => {
         clearInterval(autoSlide);
     }
 
-    // Click navigation stops auto-slide and moves slides
-    leftBtn.addEventListener('click', () => {
-        stopAutoSlide();
-        showSlide(index - 1);
-    });
-
     rightBtn.addEventListener('click', () => {
         stopAutoSlide();
         showSlide(index + 1);
     });
 
+    leftBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        showSlide(index - 1);
+    });
+
     dots.forEach((dot, i) => {
         dot.addEventListener('click', () => {
             stopAutoSlide();
-            showSlide(i);
+            showSlide(i + 1);
         });
     });
 
     // Start auto-slide initially
     // startAutoSlide();
 });
+
+
 
 
 
